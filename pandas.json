@@ -6,8 +6,8 @@
     "code": "import pandas as pd\ndf = pd.DataFrame({\"A\":[1,2,3], \"B\":[4,5,6]})\nprint(df[df[\"A\"] > 1])"
   },
   {
-    "question": "How do you drop missing values?",
-    "answer": "Use dropna() to remove rows with missing data.",
+    "question": "What is the difference between a Series and a DataFrame?",
+    "answer": " The pandas DataFrame will be in tabular format with multiple rows and columns where each column can be of different data types.<br><br>The Series is a one-dimensional labeled array that can store any data type, but all of its values should be of the same data type. The Series data structure is more like single column of a DataFrame.",
     "language": "python",
     "code": "df = df.dropna()"
   }
