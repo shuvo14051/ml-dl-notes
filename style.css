@@ -227,12 +227,17 @@ h2::after {
 .card, .qa-card, .option-card {
   background: var(--card-bg);
   border-radius: var(--border-radius);
-  padding: 1.8rem;
-  margin: 1.5rem 0;
+  padding: 1rem;
+  margin: 1rem 0;
   box-shadow: var(--shadow);
   transition: var(--transition);
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
+
+.qa-card h3 {
+  color: #d2e624;
+}
+
 
 body.light-mode .card, 
 body.light-mode .qa-card, 
