@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Notes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <a href="#" onclick="showSection('home')">Home</a>
+    <a href="#" onclick="showSection('interview')">Interview Questions</a>
+    <a href="#" onclick="showSection('books')">Book Notes</a>
+    <button id="mode-toggle" onclick="toggleMode()">🌙</button>
+  </nav>
+
+  <main>
+    <!-- Home -->
+    <section id="home" class="active">
+      <div class="hero">
+        <h1>🚀 Welcome to My Notes</h1>
+        <p class="tagline">A place for Book Notes, Interview Prep, and Code Snippets.</p>
+        <div class="hero-buttons">
+          <a href="#" onclick="showSection('interview')">💻 Interview Prep</a>
+          <a href="#" onclick="showSection('books')">📚 Book Notes</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Book Notes -->
+    <section id="books">
+      <h2>📚 Book Notes</h2>
+      <div class="card-grid">
+        <div class="option-card" onclick="showSection('book1')">
+          <h3>Math for Deep Learning</h3>
+          <p>Notes and examples from Book 1</p>
+        </div>
+        <div class="option-card" onclick="showSection('book2')">
+          <h3>Book 2</h3>
+          <p>SQL and concepts from Book 2</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="book1">
+      <h2>📖 Book 1 Notes</h2>
+      <div class="card">
+        <p class="desc">This function adds two numbers. Example from Chapter 2.</p>
+        <pre><code class="language-python">def add(a, b):
+    return a + b</code></pre>
+      </div>
+      <span class="back" onclick="showSection('books')">⬅ Back to Book Notes</span>
+    </section>
+
+    <section id="book2">
+      <h2>📖 Book 2 Notes</h2>
+      <div class="card">
+        <p class="desc">SQL query to fetch all books published after 2000.</p>
+        <pre><code class="language-sql">SELECT title, author FROM books WHERE year > 2000;</code></pre>
+      </div>
+      <span class="back" onclick="showSection('books')">⬅ Back to Book Notes</span>
+    </section>
+
+    <!-- Interview -->
+    <section id="interview">
+      <h2>💻 Interview Questions</h2>
+      <div class="card-grid">
+        <div class="option-card" onclick="showSection('pandas')">
+          <h3>🐼 Pandas</h3>
+          <p>Filtering, merging, groupby…</p>
+        </div>
+        <div class="option-card" onclick="showSection('numpy')">
+          <h3>🔢 Numpy</h3>
+          <p>Matrices, operations, arrays…</p>
+        </div>
+        <div class="option-card" onclick="showSection('ml')">
+          <h3>🤖 Machine Learning</h3>
+          <p>Models, training, evaluation…</p>
+        </div>
+        <div class="option-card" onclick="showSection('dl')">
+          <h3>🧠 Deep Learning</h3>
+          <p>Neural networks, backpropagation…</p>
+        </div>
+        <div class="option-card" onclick="showSection('math')">
+          <h3>➗ Math</h3>
+          <p>Linear algebra, probability, calculus…</p>
+        </div>
+        <div class="option-card" onclick="showSection('viz')">
+          <h3>📊 Visualization</h3>
+          <p>Matplotlib, Seaborn, Plotly…</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Empty containers for dynamic Q/A -->
+    <section id="pandas"><h2>🐼 Pandas</h2><div id="pandas-qa"></div><span class="back" onclick="showSection('interview')">⬅ Back</span></section>
+    <section id="numpy"><h2>🔢 Numpy</h2><div id="numpy-qa"></div><span class="back" onclick="showSection('interview')">⬅ Back</span></section>
+    <section id="ml"><h2>🤖 Machine Learning</h2><div id="ml-qa"></div><span class="back" onclick="showSection('interview')">⬅ Back</span></section>
+    <section id="dl"><h2>🧠 Deep Learning</h2><div id="dl-qa"></div><span class="back" onclick="showSection('interview')">⬅ Back</span></section>
+    <section id="math"><h2>➗ Math</h2><div id="math-qa"></div><span class="back" onclick="showSection('interview')">⬅ Back</span></section>
+    <section id="viz"><h2>📊 Visualization</h2><div id="viz-qa"></div><span class="back" onclick="showSection('interview')">⬅ Back</span></section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-sql.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

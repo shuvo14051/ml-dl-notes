@@ -1,0 +1,14 @@
+[
+  {
+    "question": "What is pandas in Python?",
+    "answer": "Pandas is an open-source Python library with powerful and built-in methods to efficiently clean, analyze, and manipulate datasets. ",
+    "language": "python",
+    "code": "import pandas as pd\ndf = pd.DataFrame({\"A\":[1,2,3], \"B\":[4,5,6]})\nprint(df[df[\"A\"] > 1])"
+  },
+  {
+    "question": "How do you drop missing values?",
+    "answer": "Use dropna() to remove rows with missing data.",
+    "language": "python",
+    "code": "df = df.dropna()"
+  }
+]

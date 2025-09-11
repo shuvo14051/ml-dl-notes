@@ -1,0 +1,8 @@
+[
+  {
+    "question": "How do you create a matrix in NumPy?",
+    "answer": "Use np.array() with a list of lists.",
+    "language": "python",
+    "code": "import numpy as np\nmatrix = np.array([[1,2,3],[4,5,6]])\nprint(matrix)"
+  }
+]
