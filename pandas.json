@@ -2,13 +2,34 @@
   {
     "question": "What is pandas in Python?",
     "answer": "Pandas is an open-source Python library with powerful and built-in methods to efficiently clean, analyze, and manipulate datasets. Pandas is built on top of the NumPy library i.e., its data structures Series and DataFrame are the upgraded versions of NumPy arrays.",
-    "language": "python",
-    "code": "import pandas as pd\ndf = pd.DataFrame({\"A\":[1,2,3], \"B\":[4,5,6]})\nprint(df[df[\"A\"] > 1])"
+    "language": "python"
   },
   {
     "question": "What is the difference between a Series and a DataFrame?",
     "answer": " The pandas DataFrame will be in tabular format with multiple rows and columns where each column can be of different data types.<br><br>The Series is a one-dimensional labeled array that can store any data type, but all of its values should be of the same data type. The Series data structure is more like single column of a DataFrame.",
+    "language": "python"
+  },
+
+  {
+    "question": "How to do Indexing pandas?",
+    "answer": "By default the index starts with 0, 1, 2, ... . But we can pass a list of index using teh index parameter.",
     "language": "python",
-    "code": "df = df.dropna()"
-  }
+    "code": "import pandas as pd\n\ndata = [['John', 50, 'Austin', 70],\n        ['Cataline', 45 , 'San Francisco', 80],\n        ['Matt', 30, 'Boston' , 95]]\ncolumns = ['Name', 'Age', 'City', 'Marks']\n#row indexes\nidx = ['x', 'y', 'z']\ndf = pd.DataFrame(data, columns=columns, index=idx)\nprint(df)"
+  },
+
+  {
+  "question": "What is the difference between loc and iloc in pandas?",
+  "answer": "In pandas, loc is label-based indexing while iloc is position-based indexing.<br><br>loc uses row and column labels (like 'x' or 'Name'), while iloc uses integer positions (like 0 for the first row or first column).",
+  "language": "python",
+  "code": "import pandas as pd\n\ndata = {\n    'Name': ['Alice', 'Bob', 'Charlie'],\n    'Age': [25, 30, 35],\n    'City': ['NY', 'LA', 'SF']\n}\n\ndf = pd.DataFrame(data, index=['x', 'y', 'z'])\n\nprint(df.loc['y', 'City'])   # label-based → 'LA'\nprint(df.iloc[1, 2])         # position-based → 'LA'\n"
+  },
+
+  {
+  "question": "Show two different ways to create a pandas DataFrame.",
+  "answer": "You can create a pandas DataFrame in multiple ways. Two common approaches are:<br><br>1. Using a Python dictionary, where keys are column names and values are lists of column data.<br>2. Using a list of lists along with an explicit list of column names.",
+  "language": "python",
+  "code": "import pandas as pd\n\n# Using Python Dictionary\ndata = {\n    'Name': ['John', 'Cataline', 'Matt'],\n    'Age': [50, 45, 30],\n    'City': ['Austin', 'San Francisco', 'Boston'],\n    'Marks': [70, 80, 95]\n}\n\ndf1 = pd.DataFrame(data)\nprint(df1)\n\n# Using Python Lists\ndata = [['John', 25, 'Austin', 70],\n        ['Cataline', 30, 'San Francisco', 80],\n        ['Matt', 35, 'Boston', 90]]\n\ncolumns = ['Name', 'Age', 'City', 'Marks']\n\ndf2 = pd.DataFrame(data, columns=columns)\nprint(df2)"
+}
+
+
 ]
