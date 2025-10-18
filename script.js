@@ -54,3 +54,15 @@ window.addEventListener("load", () => {
   const section = location.hash.replace("#", "") || "home";
   showSection(section);
 });
+
+function showSection(id) {
+  document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+  const section = document.getElementById(id);
+  section.classList.add("active");
+
+  document.querySelectorAll(".external-links").forEach(e => e.style.display = "none");
+  if (["interview", "pandas", "numpy"].includes(id)) {
+    const links = section.querySelector(".external-links");
+    if (links) links.style.display = "flex";
+  }
+}
