@@ -416,3 +416,32 @@ body.light-mode .token.number {
     grid-template-columns: 1fr;
   }
 }
+/* Hover output for code blocks */
+.hover-container {
+  position: relative;
+  display: inline-block;
+}
+
+.hover-output {
+  display: none;
+  position: absolute;
+  left: 105%;
+  top: 10px;
+  background: var(--card-bg);
+  border: 1px solid var(--accent);
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: var(--text);
+  white-space: pre;
+  box-shadow: var(--shadow);
+  z-index: 10;
+  min-width: 220px;
+  max-width: 400px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.hover-container:hover .hover-output {
+  display: block;
+}

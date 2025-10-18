@@ -2,7 +2,7 @@ function showSection(id) {
   document.querySelectorAll('main section').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
-  location.hash = id; // persist in URL
+  location.hash = id;
 }
 
 function toggleMode() {
@@ -31,8 +31,14 @@ for (let topic in topics) {
           card.classList.add("qa-card");
 
           let html = `<h3 class="qa-question">Q: ${item.question}</h3><p>A: ${item.answer}</p>`;
+          
           if (item.code && item.code.trim() !== "") {
-            html += `<pre><code class="language-${item.language || 'python'}">${item.code}</code></pre>`;
+            html += `
+              <div class="hover-container">
+                <pre><code class="language-${item.language || 'python'}">${item.code}</code></pre>
+                ${item.output ? `<div class="hover-output">Output:\n${item.output}</div>` : ""}
+              </div>
+            `;
           }
 
           card.innerHTML = html;
@@ -44,7 +50,6 @@ for (let topic in topics) {
     .catch(err => console.error("Error loading", topics[topic], err));
 }
 
-// restore section from URL hash on load
 window.addEventListener("load", () => {
   const section = location.hash.replace("#", "") || "home";
   showSection(section);

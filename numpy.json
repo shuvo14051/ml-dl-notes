@@ -1,8 +1,16 @@
 [
   {
-    "question": "How do you create a matrix in NumPy?",
-    "answer": "Use np.array() with a list of lists.",
+    "question": "What is NumPy and how to create a NumPy array?",
+    "answer": "NumPy is used for numerical and scientific computing. It supports arrays, matrices, and mathematical operations.",
     "language": "python",
-    "code": "import numpy as np\nmatrix = np.array([[1,2,3],[4,5,6]])\nprint(matrix)"
+    "code": "import numpy as np\nmatrix = np.array([[1,2,3],[4,5,6]])\nprint(matrix)",
+    "output": "[[1 2 3]\n [4 5 6]]"
+  },
+  {
+    "question": "How does np.arange work?",
+    "answer": "np.arange(start, stop, step) creates evenly spaced values within a range.",
+    "language": "python",
+    "code": "arr = np.arange(0, 10, 2)\nprint(arr)",
+    "output": "[0 2 4 6 8]"
   }
 ]
